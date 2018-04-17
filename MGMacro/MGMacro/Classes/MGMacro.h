@@ -40,8 +40,9 @@
 #endif
 
 // 弱/强引用
-#define MGWeakSelf(type)  __weak typeof(type) weak##type = type;
-#define MGStrongSelf(type)  __strong typeof(type) type = weak##type;
+#define MGWeakSelf __weak typeof(self) weakSelf = self;
+#define MGWeakObj(type)  __weak typeof(type) weak##type = type;
+#define MGStrongObj(type)  __strong typeof(type) type = weak##type;
 
 // 设置 view 圆角和边框
 #define MGViewBorderRadius(View, Radius, Width, Color)\
